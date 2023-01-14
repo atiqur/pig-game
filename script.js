@@ -5,10 +5,13 @@ import { ui } from './ui.js';
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 const btnNew = document.querySelector('.btn--new');
+const diceImg = document.querySelector('.dice');
 
 btnRoll.addEventListener('click', rollDice);
 btnHold.addEventListener('click', holdBtnClicked);
 btnNew.addEventListener('click', newGame);
+
+ui.toggleDiceImg();
 
 let playerOneCurrentScore = 0;
 let playerTwoCurrentScore = 0;

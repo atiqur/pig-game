@@ -13,8 +13,8 @@ class UI {
   }
 
   showDiceImage(value) {
-    console.log(value);
     this.diceImage.src = `dice-${value}.png`;
+    this.diceImage.classList.remove('hidden');
   }
 
   showCurrentScore(player, score) {
@@ -35,8 +35,8 @@ class UI {
       .classList.remove('player--active');
 
     player === 1
-      ? this.player1.classList.add('player--active')
-      : this.player2.classList.add('player--active');
+      ? this.player1.classList.toggle('player--active')
+      : this.player2.classList.toggle('player--active');
   }
 
   showWinner(player) {
@@ -52,7 +52,12 @@ class UI {
     document
       .querySelector('.player--winner')
       .classList.remove('player--winner');
+    this.toggleDiceImg();
     this.player1.classList.add('player--active');
+  }
+
+  toggleDiceImg() {
+    this.diceImage.classList.toggle('hidden');
   }
 }
 
